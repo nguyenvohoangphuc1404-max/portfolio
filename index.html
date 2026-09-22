@@ -1,69 +1,69 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="vi">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NGUYỄN VÕ HOÀNG PHÚC - CV</title>
-    <style>
-    .avatar-wrapper {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      overflow: hidden;
-      border: 3px solid #007acc;
-    }
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Nguyễn Võ Hoàng Phúc – Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header container">
+      <a class="logo" href="#">Nguyễn Võ Hoàng Phúc</a>
+      <nav class="site-nav">
+        <ul>
+          <li><a href="#about">Giới thiệu</a></li>
+          <li><a href="#projects">Dự án</a></li>
+          <li><a href="#contact">Liên hệ</a></li>
+        </ul>
+      </nav>
+    </header>
 
-    .avatar-wrapper img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-  </style>
-</head>
+    <main class="container">
+      <section id="about" class="hero">
+        <div>
+          <h1>Nguyễn Võ Hoàng Phúc</h1>
+          <p>Sinh viên Vật lý, thích làm web.</p>
+          <a class="button" href="#contact">Liên hệ</a>
+        </div>
+        <img src="Hình đại diện.png" alt="Hình đại diện">
+      </section>
 
-<body>
-    <header>
-  <nav>
-    <a href="#about">Giới thiệu</a>
-    <a href="#projects">Dự án</a>
-    <a href="#contact">Liên hệ</a>
-  </nav>
-</header>
-<main>
-  <section id="about">
-    <h1>Nguyễn Võ Hoàng Phúc</h1>
-    <p>Sinh viên Vật lý, thích làm web.</p>
-    <div class="avatar-wrapper">
-    <img src="Ảnh chụp màn hình (73).png" alt=" ảnh QiQi ảnh đại diện">
-    </div>
-  </section>
-</main>
-<section id="projects">
-  <h2>Dự án</h2>
-  <article>
-    <h3>Thiết kế Wed</h3>
-    <p>Python + Matplotlib, 2025.</p>
-  </article>
-  <article>
-    <h3>Đo nhiệt độ bằng Arduino</h3>
-    <p>C++ và cảm biến ESP32.</p>
-  </article>
-   <h3>Thông tin liên hệ </h3>
-</section>
-<section id="contact">
-  <h2>Liên hệ</h2>
-  <form>
-    <label for="name">Họ tên</label>
-    <input id="name" name="name" required>
-    <label for="email">Email</label>
-    <input id="email" type="email"
-           name="email" required>
-    <label for="msg">Lời nhắn</label>
-    <textarea id="msg" name="msg"></textarea>
-    <button>Gửi</button>
-  </form>
-</section>
-<footer>© 2026 QIQI</footer>
-</body>
+      <section id="projects">
+        <h2>Dự án</h2>
+        <article class="card">
+          <h3>Mô phỏng con lắc</h3>
+          <p>Python + Matplotlib, 2025.</p>
+        </article>
+        <article class="card">
+          <h3>Đo nhiệt độ bằng Arduino</h3>
+          <p>C++ và cảm biến DS18B20.</p>
+        </article>
+        <article class="card">
+          <h3>Phân tích phổ quang học</h3>
+          <p>Xử lý dữ liệu đo bằng NumPy.</p>
+        </article>
+      </section>
 
+      <section id="contact">
+        <h2>Liên hệ</h2>
+        <form>
+          <div class="field">
+            <label for="name">Họ tên</label>
+            <input id="name" name="name" required>
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" type="email" name="email" required>
+          </div>
+          <div class="field">
+            <label for="msg">Lời nhắn</label>
+            <textarea id="msg" name="msg"></textarea>
+          </div>
+          <button class="button" type="submit">Gửi</button>
+        </form>
+      </section>
+    </main>
+
+    <footer class="container">© 2026 Nguyễn Võ Hoàng Phúc</footer>
+  </body>
 </html>
