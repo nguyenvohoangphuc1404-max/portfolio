@@ -43,23 +43,19 @@
         </ul>
       </section>
 
-      <!-- Section Dự án (Lưới tự co giãn) -->
+      <!-- Section Dự án: dùng ul và template theo đúng bài học -->
       <section id="projects">
         <h2>Dự án tiêu biểu</h2>
-        <div class="projects">
-          <article class="card">
-            <h3>Phân tích dữ liệu phổ quang học</h3>
-            <p>Xử lý dữ liệu đo quang phổ, khử nhiễu tín hiệu và dựng đường cong phổ tự động bằng Python kết hợp OriginLab (2025 - 2026).</p>
-          </article>
-          <article class="card">
-            <h3>Hệ thống giám sát nhiệt độ đa điểm</h3>
-            <p>Thiết kế mạch vi điều khiển Arduino thu thập thông số cảm biến DS18B20 và truyền thông nối tiếp thời gian thực.</p>
-          </article>
-          <article class="card">
-            <h3>Mô phỏng động lực học & cơ hệ</h3>
-            <p>Mô phỏng chuyển động con lắc và bài toán truyền sóng điện từ trường, trực quan hóa quỹ đạo nghiệm bằng Matplotlib.</p>
-          </article>
-        </div>
+        <div id="filters"></div>
+
+        <ul id="project-list" class="projects"></ul>
+
+        <template id="project-card">
+          <li class="card">
+            <h3></h3>
+            <p class="tags"></p>
+          </li>
+        </template>
       </section>
 
       <!-- Section Liên hệ -->
@@ -90,5 +86,8 @@
         <a href="https://linkedin.com" target="_blank" rel="noreferrer">Hồ sơ LinkedIn</a>
       </p>
     </footer>
+
+    <!-- Gọi app.js dạng module -->
+    <script type="module" src="app.js"></script>
   </body>
 </html>
