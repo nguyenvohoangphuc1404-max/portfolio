@@ -17,7 +17,7 @@
   --font: "Plus Jakarta Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
-/* Tự động chuyển Dark mode đậm chất công nghệ / không gian */
+/* Tự động chuyển Dark mode */
 @media (prefers-color-scheme: dark) {
   :root {
     --color-bg: #0b0f19;
@@ -42,7 +42,6 @@ body {
   line-height: 1.65;
   color: var(--color-text);
   background-color: var(--color-bg);
-  /* Background Mesh Gradient đa sắc + Hạt lưới tinh tế */
   background-image: 
     radial-gradient(at 0% 0%, var(--color-accent-glow) 0px, transparent 50%),
     radial-gradient(at 100% 100%, rgba(45, 212, 191, 0.15) 0px, transparent 50%),
@@ -58,7 +57,7 @@ body {
   padding-inline: var(--space);
 }
 
-/* Header dạng Glassmorphism & dính đỉnh khi cuộn (Sticky) */
+/* Header dạng Glassmorphism */
 .site-header {
   position: sticky;
   top: 0;
@@ -139,7 +138,14 @@ a {
   max-width: 40rem;
 }
 
-/* Ảnh đại diện: Viền phát sáng Gradient (Glow Ring) */
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+
+/* Ảnh đại diện */
 .avatar {
   max-width: 100%;
   width: 250px;
@@ -185,6 +191,52 @@ section h2::after {
   border-radius: 2px;
 }
 
+/* Phần Học vấn */
+#education {
+  padding-block: 2.5rem;
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.timeline-item {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  background: var(--color-card-bg);
+  border: 1px solid var(--color-border);
+  backdrop-filter: blur(8px);
+}
+
+.timeline-meta {
+  font-weight: 700;
+  color: var(--color-accent);
+  font-size: 0.95rem;
+}
+
+.timeline-content h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.15rem;
+}
+
+.timeline-detail {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  margin-top: 0.5rem;
+}
+
+@media (max-width: 40rem) {
+  .timeline-item {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+}
+
 /* Kỹ năng dạng Chip */
 #skills {
   padding-block: 2.5rem;
@@ -208,7 +260,7 @@ section h2::after {
   font-size: 0.925rem;
   font-weight: 500;
   border: 1px solid var(--color-border);
-  box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.02);
   transition: all 0.25s ease;
 }
 
@@ -218,7 +270,36 @@ section h2::after {
   color: var(--color-accent);
 }
 
-/* Card Dự án (Glassmorphism & hiệu ứng Hover bay nhẹ) */
+/* Bộ lọc Filters */
+#filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+#filters button {
+  background: var(--color-card-bg);
+  color: var(--color-text-muted);
+  border: 1px solid var(--color-border);
+  padding: 0.45rem 1.1rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  text-transform: capitalize;
+  transition: all 0.2s ease;
+}
+
+#filters button:hover,
+#filters button.active {
+  color: #fff;
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  box-shadow: 0 2px 8px var(--color-accent-glow);
+}
+
+/* Card Dự án */
 #projects {
   padding-block: 2.5rem;
 }
@@ -227,6 +308,8 @@ section h2::after {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
   gap: 1.75rem;
+  padding: 0;
+  list-style: none;
 }
 
 .card {
@@ -252,7 +335,51 @@ section h2::after {
   color: var(--color-accent);
 }
 
-.card p {
+.card .desc {
+  margin: 0.6rem 0 1.25rem 0;
+  font-size: 0.925rem;
+  line-height: 1.55;
+  color: var(--color-text-muted);
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid var(--color-border);
+  padding-top: 0.85rem;
+  font-size: 0.85rem;
+}
+
+.tags-badge {
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+  font-size: 0.75rem;
+  color: var(--color-accent);
+}
+
+.card-link {
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+.card-link:hover {
+  text-decoration: underline;
+}
+
+/* Mục Thành tích */
+#achievements {
+  padding-block: 2.5rem;
+}
+
+.achievement-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+  gap: 1.5rem;
+}
+
+.achievement-grid .card p {
   color: var(--color-text-muted);
   font-size: 0.95rem;
   margin-bottom: 0;
@@ -292,7 +419,7 @@ input:focus, textarea:focus {
   box-shadow: 0 0 0 3px var(--color-accent-glow);
 }
 
-/* Nút bấm (Button) Gradient hiện đại */
+/* Nút bấm (Button) */
 .button {
   display: inline-block;
   padding: 0.85rem 1.75rem;
@@ -312,8 +439,16 @@ input:focus, textarea:focus {
   box-shadow: 0 6px 20px var(--color-accent-glow);
 }
 
-.button:active {
-  transform: translateY(0);
+.button-outline {
+  background: transparent;
+  color: var(--color-accent);
+  border: 1.5px solid var(--color-accent);
+  box-shadow: none;
+}
+
+.button-outline:hover {
+  background: var(--color-accent-glow);
+  box-shadow: 0 4px 14px var(--color-accent-glow);
 }
 
 /* Footer */
