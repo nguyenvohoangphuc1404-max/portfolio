@@ -30,7 +30,9 @@
   }
 }
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   margin: 0;
@@ -43,7 +45,7 @@ body {
   min-height: 100vh;
 }
 
-/* Lớp dùng chung cho các thẻ kính (Glassmorphism) */
+/* Lớp dùng chung cho các thẻ dạng Glassmorphism */
 .timeline-item, .tags li, #filters button, .card, input, textarea {
   background: var(--color-card-bg);
   border: 1px solid var(--color-border);
@@ -56,7 +58,9 @@ body {
   padding-inline: var(--space);
 }
 
-section { padding-block: 2.5rem; }
+section {
+  padding-block: 2.5rem;
+}
 
 a {
   color: inherit;
@@ -90,7 +94,10 @@ a {
   -webkit-text-fill-color: transparent;
 }
 
-.logo { font-size: 1.25rem; letter-spacing: -0.5px; }
+.logo {
+  font-size: 1.25rem;
+  letter-spacing: -0.5px;
+}
 
 .site-nav ul, .tags, .projects {
   display: flex;
@@ -125,7 +132,12 @@ a {
   max-width: 40rem;
 }
 
-.hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1.5rem; }
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
 
 .avatar {
   width: 250px;
@@ -148,7 +160,7 @@ a {
   .avatar { justify-self: end; }
 }
 
-/* Headings */
+/* Tiêu đề section */
 section h2 {
   font-size: 1.8rem;
   margin-bottom: 1.5rem;
@@ -167,7 +179,7 @@ section h2::after {
   border-radius: 2px;
 }
 
-/* Timeline (Education) */
+/* Timeline (Học vấn) */
 .timeline { display: flex; flex-direction: column; gap: 1.5rem; }
 .timeline-item {
   display: grid;
@@ -188,7 +200,7 @@ section h2::after {
   .timeline-item { grid-template-columns: 1fr; gap: 0.5rem; }
 }
 
-/* Chips & Filters */
+/* Chips & Bộ lọc */
 .tags { gap: 0.75rem; }
 .tags li, #filters button {
   padding: 0.5rem 1.1rem;
@@ -211,10 +223,20 @@ section h2::after {
   transform: translateY(-2px);
 }
 
-#filters { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 2rem; }
-#filters button { cursor: pointer; text-transform: capitalize; color: var(--color-text-muted); }
+#filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
 
-/* Projects & Achievements Grid */
+#filters button {
+  cursor: pointer;
+  text-transform: none; /* Giữ nguyên chữ hoa/thường */
+  color: var(--color-text-muted);
+}
+
+/* Dự án & Grid thành tích */
 .projects, .achievement-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
@@ -254,7 +276,7 @@ section h2::after {
 
 .card-link:hover { text-decoration: underline; }
 
-/* Contact & Inputs */
+/* Liên hệ & Input */
 #contact { max-width: 38rem; }
 .field { display: flex; flex-direction: column; gap: 0.45rem; margin-bottom: 1.25rem; }
 label { font-weight: 600; font-size: 0.9rem; }
@@ -272,7 +294,7 @@ input:focus, textarea:focus {
   box-shadow: 0 0 0 3px var(--color-accent-glow);
 }
 
-/* Buttons */
+/* Nút bấm (Button) */
 .button {
   display: inline-block;
   padding: 0.85rem 1.75rem;
