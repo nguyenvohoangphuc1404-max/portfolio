@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 export default function ContactForm() {
-  const [form, setForm] = useState({ name: '', email: '' });
+  const [form, setForm] = useState({ name: '', email: '', message: '' });
   const [errors, setErrors] = useState({});
   const [sent, setSent] = useState(false);
 
@@ -20,9 +20,19 @@ export default function ContactForm() {
     if (!form.email.includes('@')) {
       next.email = 'Email chưa hợp lệ';
     }
+    if (!form.message.trim()) {
+      next.message = 'Chưa nhập tin nhắn';
+    } else if (form.message.trim().length < 10) {
+      next.message = 'Tin nhắn phải có ít nhất 10 ký tự';
+    }
 
     setErrors(next);
-    setSent(Object.keys(next).length === 0);
+    const isValid = Object.keys(next).length === 0;
+    setSent(isValid);
+
+    if (isValid) {
+      setForm({ name: '', email: '', message: '' });
+    }
   }
 
   return (
@@ -34,9 +44,7 @@ export default function ContactForm() {
         value={form.name}
         onChange={update}
       />
-      {errors.name && (
-        <p className="error">{errors.name}</p>
-      )}
+      {errors.name && <p className="error">{errors.name}</p>}
 
       <label htmlFor="email">Email</label>
       <input
@@ -46,9 +54,17 @@ export default function ContactForm() {
         value={form.email}
         onChange={update}
       />
-      {errors.email && (
-        <p className="error">{errors.email}</p>
-      )}
+      {errors.email && <p className="error">{errors.email}</p>}
+
+      <label htmlFor="message">Tin nhắn</label>
+      <textarea
+        id="message"
+        name="message"
+        rows="4"
+        value={form.message}
+        onChange={update}
+      />
+      {errors.message && <p className="error">{errors.message}</p>}
 
       <button className="button" type="submit">Gửi</button>
       {sent && <p className="ok">Đã gửi. Cảm ơn bạn!</p>}
