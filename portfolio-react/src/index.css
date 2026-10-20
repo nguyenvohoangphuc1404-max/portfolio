@@ -1,3 +1,4 @@
+@import "tailwindcss";
 * {
   box-sizing: border-box;
   margin: 0;
@@ -156,4 +157,9 @@ body {
 .ok {
   color: #16a34a;
   font-weight: 500;
+}
+.skeleton {
+  height: 3rem;
+  margin: 0.5rem 0;
+  background: #e2e8f0;
 }
